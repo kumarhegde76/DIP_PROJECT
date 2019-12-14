@@ -1,0 +1,395 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>main</title><meta name="generator" content="MATLAB 7.12"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-04-21"><meta name="DC.source" content="main.m"><style type="text/css">
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head><body><div class="content"><pre class="codeinput"><span class="keyword">function</span> varargout = main(varargin)
+<span class="comment">% MAIN M-file for main.fig</span>
+<span class="comment">%      MAIN, by itself, creates a new MAIN or raises the existing</span>
+<span class="comment">%      singleton*.</span>
+<span class="comment">%</span>
+<span class="comment">%      H = MAIN returns the handle to a new MAIN or the handle to</span>
+<span class="comment">%      the existing singleton*.</span>
+<span class="comment">%</span>
+<span class="comment">%      MAIN('CALLBACK',hObject,eventData,handles,...) calls the local</span>
+<span class="comment">%      function named CALLBACK in MAIN.M with the given input arguments.</span>
+<span class="comment">%</span>
+<span class="comment">%      MAIN('Property','Value',...) creates a new MAIN or raises the</span>
+<span class="comment">%      existing singleton*.  Starting from the left, property value pairs are</span>
+<span class="comment">%      applied to the GUI before main_OpeningFcn gets called.  An</span>
+<span class="comment">%      unrecognized property name or invalid value makes property application</span>
+<span class="comment">%      stop.  All inputs are passed to main_OpeningFcn via varargin.</span>
+<span class="comment">%</span>
+<span class="comment">%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one</span>
+<span class="comment">%      instance to run (singleton)".</span>
+<span class="comment">%</span>
+<span class="comment">% See also: GUIDE, GUIDATA, GUIHANDLES</span>
+
+
+<span class="comment">% Begin initialization code - DO NOT EDIT</span>
+gui_Singleton = 1;
+gui_State = struct(<span class="string">'gui_Name'</span>,       mfilename, <span class="keyword">...</span>
+                   <span class="string">'gui_Singleton'</span>,  gui_Singleton, <span class="keyword">...</span>
+                   <span class="string">'gui_OpeningFcn'</span>, @main_OpeningFcn, <span class="keyword">...</span>
+                   <span class="string">'gui_OutputFcn'</span>,  @main_OutputFcn, <span class="keyword">...</span>
+                   <span class="string">'gui_LayoutFcn'</span>,  [] , <span class="keyword">...</span>
+                   <span class="string">'gui_Callback'</span>,   []);
+<span class="keyword">if</span> nargin &amp;&amp; ischar(varargin{1})
+    gui_State.gui_Callback = str2func(varargin{1});
+<span class="keyword">end</span>
+
+<span class="keyword">if</span> nargout
+    [varargout{1:nargout}] = gui_mainfcn(gui_State, varargin{:});
+<span class="keyword">else</span>
+    gui_mainfcn(gui_State, varargin{:});
+<span class="keyword">end</span>
+<span class="comment">% End initialization code - DO NOT EDIT</span>
+
+
+<span class="comment">% --- Executes just before main is made visible.</span>
+<span class="keyword">function</span> main_OpeningFcn(hObject, eventdata, handles, varargin)
+<span class="comment">% This function has no output args, see OutputFcn.</span>
+<span class="comment">% hObject    handle to figure</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+<span class="comment">% varargin   command line arguments to main (see VARARGIN)</span>
+
+<span class="comment">% Choose default command line output for main</span>
+handles.output = hObject;
+ah=axes(<span class="string">'unit'</span>,<span class="string">'normalized'</span>,<span class="string">'position'</span>,[0 0 1 1]);
+bg=imread(<span class="string">'Files\1.jpg'</span>); imagesc(bg);
+set(ah,<span class="string">'handlevisibility'</span>,<span class="string">'off'</span>,<span class="string">'visible'</span>,<span class="string">'off'</span>);
+uistack(ah,<span class="string">'bottom'</span>);
+<span class="comment">% Update handles structure</span>
+guidata(hObject, handles);
+
+<span class="comment">% UIWAIT makes main wait for user response (see UIRESUME)</span>
+<span class="comment">% uiwait(handles.figure1);</span>
+
+
+<span class="comment">% --- Outputs from this function are returned to the command line.</span>
+<span class="keyword">function</span> varargout = main_OutputFcn(hObject, eventdata, handles)
+<span class="comment">% varargout  cell array for returning output args (see VARARGOUT);</span>
+<span class="comment">% hObject    handle to figure</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+<span class="comment">% Get default command line output from handles structure</span>
+varargout{1} = handles.output;
+
+
+<span class="comment">% --- Executes on button press in Input.</span>
+<span class="keyword">function</span> Input_Callback(hObject, eventdata, handles)
+<span class="keyword">global</span> vfilename;
+<span class="keyword">global</span> vpathname;
+<span class="keyword">global</span> nFrames;
+<span class="keyword">global</span> vi;
+<span class="keyword">global</span> k
+delete(<span class="string">'frames\*.jpg'</span>);
+[ vfilename, vpathname ] = uigetfile( <span class="string">'dataset\*.avi'</span>, <span class="string">'Select an video'</span> );
+I=mmreader(strcat( vpathname, vfilename ));
+nFrames = I.numberofFrames;
+vidHeight =  I.Height;
+vidWidth =  I.Width;
+mov(1:nFrames) = <span class="keyword">...</span>
+    struct(<span class="string">'cdata'</span>, zeros(vidHeight, vidWidth, 3, <span class="string">'uint8'</span>),<span class="keyword">...</span>
+           <span class="string">'colormap'</span>, []);
+<span class="keyword">for</span> k = 1: nFrames
+    mov(k).cdata = read( I, k);
+   mov(k).cdata = imresize(mov(k).cdata,[256,256]);
+    imwrite(mov(k).cdata,[<span class="string">'Frames\'</span>,num2str(k),<span class="string">'.jpg'</span>]);
+<span class="keyword">end</span>
+implay([vpathname vfilename]);
+<span class="comment">% hObject    handle to Input (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+
+<span class="comment">% --- Executes on button press in frameconversion.</span>
+<span class="keyword">function</span> frameconversion_Callback(hObject, eventdata, handles)
+<span class="keyword">for</span> I = 1:50
+    im=imread([<span class="string">'Frames\'</span>,num2str(I),<span class="string">'.jpg'</span>]);
+    figure(1),subplot(5,10,I),imshow(im);
+    axis <span class="string">off</span>;
+ <span class="keyword">end</span>;
+<span class="comment">% hObject    handle to frameconversion (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+
+
+<span class="comment">% --- Executes on button press in Preprocessing.</span>
+<span class="keyword">function</span> Preprocessing_Callback(hObject, eventdata, handles)
+<span class="keyword">global</span> nFrames
+<span class="keyword">for</span> i=1:nFrames
+    img=imread([<span class="string">'Frames\'</span>,num2str(i),<span class="string">'.jpg'</span>]);
+    R=img(:,:,1);
+    G=img(:,:,2);
+    B=img(:,:,3);
+    pr=medfilt2(R);
+    pg=medfilt2(G);
+    pb=medfilt2(B);
+    pre=cat(3,pr,pg,pb);
+    axes(handles.axes1);
+    imshow(pre);
+    title(<span class="string">'Preprocessed Frames'</span>,<span class="string">'fontsize'</span>,14,<span class="string">'fontname'</span>,<span class="string">'Times New Roman'</span>,<span class="string">'color'</span>,<span class="string">'White'</span>);
+    axis <span class="string">off</span>;
+<span class="keyword">end</span>
+
+
+<span class="comment">% --- Executes on button press in Cornerdetection.</span>
+<span class="keyword">function</span> Cornerdetection_Callback(hObject, eventdata, handles)
+<span class="comment">% hObject    handle to Cornerdetection (see GCBO)</span>
+<span class="comment">% eventdata  reserved - to be defined in a future version of MATLAB</span>
+<span class="comment">% handles    structure with handles and user data (see GUIDATA)</span>
+<span class="keyword">global</span> nFrames
+<span class="keyword">for</span> i=1:5
+img=imread([<span class="string">'Frames\'</span>,num2str(i),<span class="string">'.jpg'</span>]);
+img1gr=rgb2gray(img);
+img1gr=imresize(img1gr,[256,256]);
+SwitchWaitbars = <span class="string">'on'</span>;
+NOfWindows = 4; <span class="comment">% near each FP will be taken NOfWindows^2 of windows of size 4x4</span>
+TypeOfCornerDetector = <span class="string">'HarmonicMean'</span>;
+TypeOfNBHOOD = <span class="string">'const'</span>;
+NBHOOD = ones(3);
+BorderDistance = 4*NOfWindows;
+ThreshType = <span class="string">'const'</span>;
+HarrisThresh = 5;
+k = 0.055;
+Dilate = <span class="string">'no'</span>;
+radius = 10;
+sigma_nmbr = 9;
+dispPlaces = 5;
+[ HrLPoints1 ] = harrislpls( img1gr, TypeOfNBHOOD, NBHOOD, TypeOfCornerDetector, BorderDistance, ThreshType, HarrisThresh, k, Dilate, radius, sigma_nmbr, dispPlaces, SwitchWaitbars );
+axes(handles.axes1)
+imshow(img1gr,[]), hold <span class="string">on</span>
+axis <span class="string">off</span>;
+showellipsefeatures(HrLPoints1,[1 1 0]);
+<span class="keyword">end</span>
+main1
+</pre><img vspace="5" hspace="5" src="main_01.png" alt=""> <p class="footer"><br>
+      Published with MATLAB&reg; 7.12<br></p></div><!--
+##### SOURCE BEGIN #####
+function varargout = main(varargin)
+% MAIN M-file for main.fig
+%      MAIN, by itself, creates a new MAIN or raises the existing
+%      singleton*.
+%
+%      H = MAIN returns the handle to a new MAIN or the handle to
+%      the existing singleton*.
+%
+%      MAIN('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in MAIN.M with the given input arguments.
+%
+%      MAIN('Property','Value',...) creates a new MAIN or raises the
+%      existing singleton*.  Starting from the left, property value pairs are
+%      applied to the GUI before main_OpeningFcn gets called.  An
+%      unrecognized property name or invalid value makes property application
+%      stop.  All inputs are passed to main_OpeningFcn via varargin.
+%
+%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
+%      instance to run (singleton)".
+%
+% See also: GUIDE, GUIDATA, GUIHANDLES
+
+
+% Begin initialization code - DO NOT EDIT
+gui_Singleton = 1;
+gui_State = struct('gui_Name',       mfilename, ...
+                   'gui_Singleton',  gui_Singleton, ...
+                   'gui_OpeningFcn', @main_OpeningFcn, ...
+                   'gui_OutputFcn',  @main_OutputFcn, ...
+                   'gui_LayoutFcn',  [] , ...
+                   'gui_Callback',   []);
+if nargin && ischar(varargin{1})
+    gui_State.gui_Callback = str2func(varargin{1});
+end
+
+if nargout
+    [varargout{1:nargout}] = gui_mainfcn(gui_State, varargin{:});
+else
+    gui_mainfcn(gui_State, varargin{:});
+end
+% End initialization code - DO NOT EDIT
+
+
+% REPLACE_WITH_DASH_DASH- Executes just before main is made visible.
+function main_OpeningFcn(hObject, eventdata, handles, varargin)
+% This function has no output args, see OutputFcn.
+% hObject    handle to figure
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+% varargin   command line arguments to main (see VARARGIN)
+
+% Choose default command line output for main
+handles.output = hObject;
+ah=axes('unit','normalized','position',[0 0 1 1]);
+bg=imread('Files\1.jpg'); imagesc(bg);
+set(ah,'handlevisibility','off','visible','off');
+uistack(ah,'bottom');
+% Update handles structure
+guidata(hObject, handles);
+
+% UIWAIT makes main wait for user response (see UIRESUME)
+% uiwait(handles.figure1);
+
+
+% REPLACE_WITH_DASH_DASH- Outputs from this function are returned to the command line.
+function varargout = main_OutputFcn(hObject, eventdata, handles) 
+% varargout  cell array for returning output args (see VARARGOUT);
+% hObject    handle to figure
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Get default command line output from handles structure
+varargout{1} = handles.output;
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in Input.
+function Input_Callback(hObject, eventdata, handles)
+global vfilename;
+global vpathname;
+global nFrames;
+global vi;
+global k
+delete('frames\*.jpg');
+[ vfilename, vpathname ] = uigetfile( 'dataset\*.avi', 'Select an video' );
+I=mmreader(strcat( vpathname, vfilename ));
+nFrames = I.numberofFrames;
+vidHeight =  I.Height;
+vidWidth =  I.Width;
+mov(1:nFrames) = ...
+    struct('cdata', zeros(vidHeight, vidWidth, 3, 'uint8'),...
+           'colormap', []);
+for k = 1: nFrames
+    mov(k).cdata = read( I, k);
+   mov(k).cdata = imresize(mov(k).cdata,[256,256]);
+    imwrite(mov(k).cdata,['Frames\',num2str(k),'.jpg']);
+end
+implay([vpathname vfilename]);
+% hObject    handle to Input (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in frameconversion.
+function frameconversion_Callback(hObject, eventdata, handles)
+for I = 1:50
+    im=imread(['Frames\',num2str(I),'.jpg']);
+    figure(1),subplot(5,10,I),imshow(im);
+    axis off;
+ end;
+% hObject    handle to frameconversion (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in Preprocessing.
+function Preprocessing_Callback(hObject, eventdata, handles)
+global nFrames
+for i=1:nFrames
+    img=imread(['Frames\',num2str(i),'.jpg']);
+    R=img(:,:,1);
+    G=img(:,:,2);
+    B=img(:,:,3);
+    pr=medfilt2(R);
+    pg=medfilt2(G);
+    pb=medfilt2(B);
+    pre=cat(3,pr,pg,pb);
+    axes(handles.axes1);
+    imshow(pre);
+    title('Preprocessed Frames','fontsize',14,'fontname','Times New Roman','color','White');
+    axis off;
+end
+
+
+% REPLACE_WITH_DASH_DASH- Executes on button press in Cornerdetection.
+function Cornerdetection_Callback(hObject, eventdata, handles)
+% hObject    handle to Cornerdetection (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+global nFrames
+for i=1:5
+img=imread(['Frames\',num2str(i),'.jpg']);
+img1gr=rgb2gray(img);
+img1gr=imresize(img1gr,[256,256]);
+SwitchWaitbars = 'on'; 
+NOfWindows = 4; % near each FP will be taken NOfWindows^2 of windows of size 4x4
+TypeOfCornerDetector = 'HarmonicMean'; 
+TypeOfNBHOOD = 'const'; 
+NBHOOD = ones(3); 
+BorderDistance = 4*NOfWindows;
+ThreshType = 'const'; 
+HarrisThresh = 5; 
+k = 0.055;
+Dilate = 'no'; 
+radius = 10;
+sigma_nmbr = 9; 
+dispPlaces = 5; 
+[ HrLPoints1 ] = harrislpls( img1gr, TypeOfNBHOOD, NBHOOD, TypeOfCornerDetector, BorderDistance, ThreshType, HarrisThresh, k, Dilate, radius, sigma_nmbr, dispPlaces, SwitchWaitbars );
+axes(handles.axes1)
+imshow(img1gr,[]), hold on
+axis off;
+showellipsefeatures(HrLPoints1,[1 1 0]);
+end
+main1
+##### SOURCE END #####
+--></body></html>
